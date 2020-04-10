@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29201.188
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTaxRate", "SalesTaxRate.csproj", "{D7A29788-0496-4B03-BBF0-C2C03ED92D3C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTaxRate.Tests", "..\SalesTaxRate.Tests\SalesTaxRate.Tests.csproj", "{A5060470-4604-4ECB-AD0A-AEB38357BF24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTaxRateTest", "..\SalesTaxRateTest\SalesTaxRateTest.csproj", "{7AC80DBB-4947-4A79-8696-156D4B4C7D05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A5060470-4604-4ECB-AD0A-AEB38357BF24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5060470-4604-4ECB-AD0A-AEB38357BF24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5060470-4604-4ECB-AD0A-AEB38357BF24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AC80DBB-4947-4A79-8696-156D4B4C7D05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AC80DBB-4947-4A79-8696-156D4B4C7D05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AC80DBB-4947-4A79-8696-156D4B4C7D05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AC80DBB-4947-4A79-8696-156D4B4C7D05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
