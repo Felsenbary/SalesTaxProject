@@ -19,7 +19,7 @@ namespace SalesTaxRate.TaxRateService
         {
             try
             {
-                if (int.TryParse(city, out int total))
+                if (int.TryParse(city, out int total) || string.IsNullOrEmpty(city))
                     throw new HttpResponseException(HttpStatusCode.BadRequest);
 
                 var taxRate = await _taxRateRepository.GetTaxRateByCityAsync(city);
@@ -27,6 +27,10 @@ namespace SalesTaxRate.TaxRateService
                     throw new HttpResponseException(HttpStatusCode.NotFound);
                 
                 return taxRate;
+            }
+            catch (HttpResponseException)
+            {
+                throw;
             }
             catch (Exception)
             {
