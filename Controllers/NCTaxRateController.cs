@@ -14,9 +14,9 @@ namespace SalesTaxRate.Controllers
             _taxRateService = taxRateService;
         }
 
-        // GET: /api/NCTaxRate/cary
+        // GET: /api/NCTaxRate
         [HttpGet]
-        [Route("api/NCTaxRate/{city}")]
+        [Route("api/NCTaxRate")]
         public async Task<decimal> Get(Order order)
         {
             return await _taxRateService.GetNCTaxRateByCity(order);
