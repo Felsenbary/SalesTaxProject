@@ -4,6 +4,6 @@ namespace SalesTaxRate.TaxRateRepository
 {
     public interface ITaxRateRepository
     {
-        Task<double> GetTaxRateByCityAsync(string city);
+        Task<decimal> GetTaxRateByCityAsync(string city);
     }
 }

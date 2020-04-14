@@ -1,9 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿using SalesTaxRate.Models;
+using System.Threading.Tasks;
 
 namespace SalesTaxRate.TaxRateService
 {
     public interface ITaxRateService
     {
-        Task<double> GetNCTaxRateByCity(string city);
+        Task<decimal> GetNCTaxRateByCity(Order order);
     }
 }

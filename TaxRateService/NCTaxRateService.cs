@@ -1,4 +1,5 @@
-﻿using SalesTaxRate.TaxRateRepository;
+﻿using SalesTaxRate.Models;
+using SalesTaxRate.TaxRateRepository;
 using System;
 using System.Net;
 using System.Threading.Tasks;
@@ -15,18 +16,23 @@ namespace SalesTaxRate.TaxRateService
             _taxRateRepository = taxRateRepository;
         }
 
-        public async Task<double> GetNCTaxRateByCity(string city)
+        public async Task<decimal> GetNCTaxRateByCity(Order order)
         {
             try
             {
-                if (int.TryParse(city, out int total) || string.IsNullOrEmpty(city))
+                decimal TotalTax;
+                if (order.Amount < 0.010m)
                     throw new HttpResponseException(HttpStatusCode.BadRequest);
 
-                var taxRate = await _taxRateRepository.GetTaxRateByCityAsync(city);
-                if (taxRate == 0.000)
+                if (int.TryParse(order.City, out int total) || string.IsNullOrEmpty(order.City))
+                    throw new HttpResponseException(HttpStatusCode.BadRequest);
+
+                var taxRate = await _taxRateRepository.GetTaxRateByCityAsync(order.City);
+                if (taxRate == 0m)
                     throw new HttpResponseException(HttpStatusCode.NotFound);
-                
-                return taxRate;
+
+                TotalTax = Math.Round((order.Amount * taxRate), 2);
+                return TotalTax;
             }
             catch (HttpResponseException)
             {
