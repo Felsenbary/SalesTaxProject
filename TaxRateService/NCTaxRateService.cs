@@ -16,6 +16,12 @@ namespace SalesTaxRate.TaxRateService
             _taxRateRepository = taxRateRepository;
         }
 
+        /// <summary>
+        /// This is a service function that gets the tax rate from the repo by the city and then it calculates the total
+        /// amount of tax 
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns>the total amount of tax </returns>
         public async Task<decimal> GetNCTaxRateByCity(Order order)
         {
             try

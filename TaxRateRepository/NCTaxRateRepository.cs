@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace SalesTaxRate
 {
+    /// <summary>
+    /// This function Get the tax rate in NC by the city
+    /// </summary>
     public class NCTaxRateRepository : ITaxRateRepository
     {
         public async Task<decimal> GetTaxRateByCityAsync(string city)
