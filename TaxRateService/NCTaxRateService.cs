@@ -35,7 +35,7 @@ namespace SalesTaxRate.TaxRateService
                 if (taxRate == 0m)
                     throw new HttpResponseException(HttpStatusCode.NotFound);
 
-                TotalTax = Math.Round((order.Amount * taxRate), 2);
+                TotalTax = Math.Round((order.Amount * taxRate), 2, MidpointRounding.AwayFromZero);
                 return TotalTax;
             }
             catch (HttpResponseException)
