@@ -21,10 +21,8 @@ namespace SalesTaxRate.TaxRateService
             try
             {
                 decimal TotalTax;
-                if (order.Amount < 0.010m)
-                    throw new HttpResponseException(HttpStatusCode.BadRequest);
 
-                if (int.TryParse(order.City, out int total) || string.IsNullOrEmpty(order.City))
+                if (order is null || order.Amount < 0.010m)
                     throw new HttpResponseException(HttpStatusCode.BadRequest);
 
                 var taxRate = await _taxRateRepository.GetTaxRateByCityAsync(order.City);

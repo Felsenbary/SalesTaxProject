@@ -1,5 +1,6 @@
 ﻿using SalesTaxRate.Models;
 using SalesTaxRate.TaxRateService;
+using System.Net;
 using System.Threading.Tasks;
 using System.Web.Http;
 
