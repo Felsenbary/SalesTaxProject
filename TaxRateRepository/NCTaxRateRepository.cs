@@ -23,6 +23,8 @@ namespace SalesTaxRate
             return await taxRate;
         }
 
+        // This data was retrieved from https://www.salestaxhandbook.com/north-carolina/rates
+
         readonly Dictionary<string, decimal> TaxRate = new Dictionary<string, decimal>(StringComparer.InvariantCultureIgnoreCase)
         {
              {"Burlington", 0.0675m}
